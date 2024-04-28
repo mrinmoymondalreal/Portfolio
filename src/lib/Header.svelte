@@ -4,6 +4,7 @@
   import menuDialog from './stores/MenuDialg';
   import Button from './components/ui/button/button.svelte';
   import * as Drawer from "$lib/components/ui/drawer";
+    import { base } from '$app/paths';
 
   /** @type {string | null} */
   let r;
@@ -13,7 +14,7 @@
 
   /** @type Array<{ name: string, route: string }> */
   let headersRoutes = [
-    { name: "Home", route: "" },
+    { name: "Home", route: base },
     { name: "About Me", route: "about" },
     { name: "Projects", route: "projects" },
     { name: "Posters", route: "posters" },
