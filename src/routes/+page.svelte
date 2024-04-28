@@ -57,7 +57,7 @@
           </div>
         </a>
       {/each}
-      <a href="/projects" class="project z-[2] p-3 md:p-4 box-border relative group cursor-pointer
+      <a href="projects" class="project z-[2] p-3 md:p-4 box-border relative group cursor-pointer
         before:z-[-1] before:absolute before:block before:rounded-xl before:origin-center before:scale-95 before:opacity-0 hover:before:scale-100 hover:before:opacity-50 before:transition-[0.1s] before:-inset-1 before:bg-gray-400/20">
         <div class="picture aspect-video w-full -space-x-12 bg-gray-900 rounded-xl flex justify-center items-center">
           <div class="circle aspect-square w-20 rounded-full bg-gray-950 border-4 border-gray-900"></div>
