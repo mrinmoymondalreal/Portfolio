@@ -3,14 +3,15 @@
   setMode('dark');
   import "../app.css";
   import Header from "@/Header.svelte";
+  import { base } from '$app/paths'
 
 
   /** @type Array<{ name: string, route: string }> */
   let headersRoutes = [
-    { name: "Home", route: "/" },
-    { name: "About Me", route: "/about" },
-    { name: "Projects", route: "/project" },
-    { name: "Posters", route: "/posters" },
+    { name: "Home", route: base+"/" },
+    { name: "About Me", route: base+"/about" },
+    { name: "Projects", route: base+"/project" },
+    { name: "Posters", route: base+"/posters" },
   ];
   
 </script>

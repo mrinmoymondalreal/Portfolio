@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const dev = process.argv.includes('dev');
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
@@ -10,10 +12,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
       "@/*": "./src/lib/*"
-    },
-		paths: {
-			base: (process.env.BASE_PATH || ''),
-		}
+    }
 	},
 	preprocess: [vitePreprocess()]
 };
