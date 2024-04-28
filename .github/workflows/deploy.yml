@@ -28,8 +28,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/website'
-          PUBLIC_TELEGRAM_URL: ${{ secrets.PUBLIC_TELEGRAM_URL }}
+          BASE_PATH: '/portfolio'
         run: |
           pnpm run build
           touch build/.nojekyll
