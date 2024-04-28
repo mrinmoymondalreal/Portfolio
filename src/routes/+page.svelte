@@ -1,4 +1,6 @@
 <script>
+    import { base } from "$app/paths";
+
 
   import { GithubIcon, InstagramIcon, Link, LinkedinIcon, TwitterIcon } from "lucide-svelte";
 
@@ -11,8 +13,8 @@
   ];
 
   let projects = [
-    { name: "SocialTable", link: "https://socialtable.vercel.app/", imgSrc: "/projects/socialtable.webp", description: "Social Media website with a fancy looks lets you uplaod pictures and comments others posts" },
-    { name: "NextJsMovies", link: "https://nextjsmovies-kappa.vercel.app/", imgSrc: "/projects/nextmovies.webp", description: "NextJsMovies recommends hollywood random movies with a no style layout" },
+    { name: "SocialTable", link: "https://socialtable.vercel.app/", imgSrc: "projects/socialtable.webp", description: "Social Media website with a fancy looks lets you uplaod pictures and comments others posts" },
+    { name: "NextJsMovies", link: "https://nextjsmovies-kappa.vercel.app/", imgSrc: "projects/nextmovies.webp", description: "NextJsMovies recommends hollywood random movies with a no style layout" },
   ];
 
 </script>
@@ -68,7 +70,7 @@
   </div>
   <div class="picture flex-1 lg:pr-10 h-fit flex items-center flex-col">
     <div class="picture-wrapper w-80 md:w-96 aspect-square bg-gray-950 rounded-2xl rotate-[6deg] overflow-hidden">
-      <img src="profile_picture.webp" class="rotate-[-6deg] scale-[1.1]" alt="">
+      <img src={base+"/profile_picture.webp"} class="rotate-[-6deg] scale-[1.1]" alt="">
     </div>
     <div class="social-links pt-14 hidden lg:block">
       <ul class="flex flex-col gap-y-6">

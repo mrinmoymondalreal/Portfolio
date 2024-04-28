@@ -1,12 +1,13 @@
 <script>
+    import { base } from "$app/paths";
   import { Link } from "lucide-svelte";
 
   let projects = [
-    { name: "SocialTable", link: "https://socialtable.vercel.app/", imgSrc: "projects/socialtable.webp", description: "Social Media website with a fancy looks lets you uplaod pictures and comments others posts" },
-    { name: "NextJsMovies", link: "https://nextjsmovies-kappa.vercel.app/", imgSrc: "projects/nextmovies.webp", description: "NextJsMovies recommends hollywood random movies with a no style layout" },
-    { name: "Expense Tracker (PWA)", link: "https://expensetracker-roan.vercel.app/", imgSrc: "projects/expensetracker.webp", description: "Native like PWA to tracker all your expense needs" },
-    { name: "Movie Buff", link: "https://moviebuff-five.vercel.app/", imgSrc: "projects/moviebuff.webp", description: "Ultimate website to search and gather infomation about movies and get recommendation in your interest" },
-    { name: "SnapShare", link: "https://snapshare-two.vercel.app/home", imgSrc: "projects/snapshare.webp", description: "Photo sharing app with explore and profile options" },
+    { name: "SocialTable", link: "https://socialtable.vercel.app/", imgSrc: base+"/projects/socialtable.webp", description: "Social Media website with a fancy looks lets you uplaod pictures and comments others posts" },
+    { name: "NextJsMovies", link: "https://nextjsmovies-kappa.vercel.app/", imgSrc: base+"/projects/nextmovies.webp", description: "NextJsMovies recommends hollywood random movies with a no style layout" },
+    { name: "Expense Tracker (PWA)", link: "https://expensetracker-roan.vercel.app/", imgSrc: base+"/projects/expensetracker.webp", description: "Native like PWA to tracker all your expense needs" },
+    { name: "Movie Buff", link: "https://moviebuff-five.vercel.app/", imgSrc: base+"/projects/moviebuff.webp", description: "Ultimate website to search and gather infomation about movies and get recommendation in your interest" },
+    { name: "SnapShare", link: "https://snapshare-two.vercel.app/home", imgSrc: base+"/projects/snapshare.webp", description: "Photo sharing app with explore and profile options" },
   ];
 </script>
 <svelte:head>
