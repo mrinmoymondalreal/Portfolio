@@ -9,18 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v2
         with:
           version: 8
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
           cache: pnpm
 
       - name: Install dependencies
@@ -28,13 +28,14 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/portfolio'
+          BASE_PATH: '/website'
+          PUBLIC_TELEGRAM_URL: ${{ secrets.PUBLIC_TELEGRAM_URL }}
         run: |
           pnpm run build
           touch build/.nojekyll
 
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           # this should match the `pages` option in your adapter-static options
           path: 'build/'
@@ -50,8 +51,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
+    
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
