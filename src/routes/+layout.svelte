@@ -8,10 +8,10 @@
 
   /** @type Array<{ name: string, route: string }> */
   let headersRoutes = [
-    { name: "Home", route: base+"/" },
-    { name: "About Me", route: base+"/about" },
-    { name: "Projects", route: base+"/project" },
-    { name: "Posters", route: base+"/posters" },
+    { name: "Home", route: "" },
+    { name: "About Me", route: "about" },
+    { name: "Projects", route: "project" },
+    { name: "Posters", route: "posters" },
   ];
   
 </script>

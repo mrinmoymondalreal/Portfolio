@@ -43,7 +43,7 @@
         <div class="grid gap-4">
             {#each poster as p}
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src={'/'+p} alt="">
+                    <img class="h-auto max-w-full rounded-lg" src={p} alt="">
                 </div>
             {/each}
         </div>
