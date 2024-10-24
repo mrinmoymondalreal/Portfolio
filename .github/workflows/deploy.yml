@@ -1,15 +1,17 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
-    branches: "main"
+    branches:
+      - main
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
@@ -27,18 +29,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: build
-        env:
-          BASE_PATH: "/portfolio"
-        run: |
-          pnpm run build
-          touch build/.nojekyll
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          # this should match the `pages` option in your adapter-static options
-          path: "build/"
+          name: production-files
+          path: ./dist
 
   deploy:
     name: Deploy
