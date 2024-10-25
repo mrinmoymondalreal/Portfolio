@@ -5,16 +5,21 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProjectPage } from "./ProjectPage.tsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+    {
+      path: "/projects",
+      element: <ProjectPage />,
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/projects",
-    element: <ProjectPage />,
-  },
-]);
+    basename: "/Portfolio/",
+  }
+);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
