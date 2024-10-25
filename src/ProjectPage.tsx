@@ -14,7 +14,7 @@ const currentHovering = atom(0);
 const projects = new Array(20).fill({
   name: "Project Name",
   year: Math.floor(Math.random() * 3000),
-  url: "/videoframe_2775.png",
+  url: "videoframe_2775.png",
   link: "http://google.com",
 });
 
