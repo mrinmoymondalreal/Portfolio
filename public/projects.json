@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Inventory Admin (in progress)",
+    "description": "Developing a simple and modular inventory management system with features like product tracking, order management, and user authentication.",
+    "url": "#",
+    "image": "inventory-admin.png",
+    "technology": "Electron.js, React.js, PostgreSQL, Tailwind CSS, Express.js"
+  },
+  {
+    "title": "Tea & We",
+    "description": "E-commerce website for buying Darjeeling tea and coffee with full online payment support and order tracking.",
+    "url": "https://teawe.vercel.app/",
+    "image": "tea-and-we.png",
+    "technology": "Express, React, PostgreSQL, Tailwind CSS"
+  },
+  {
+    "title": "SocialTable",
+    "description": "Developed and implemented key features, including user authentication and photo-sharing functionality. Received positive feedback for its intuitive design and performance.",
+    "url": "https://socialtable.vercel.app/",
+    "image": "social-table.png",
+    "technology": "Next.js, PostgreSQL, Tailwind CSS, Backend API"
+  },
+  {
+    "title": "ListHit",
+    "description": "A real-time collaborative list-making app for creating, managing, and sharing lists with instant syncing across users for seamless collaboration 🚀.",
+    "url": "https://github.com/mrinmoymondalreal/ListHit",
+    "image": "listhit.png",
+    "technology": "React Native, WebSocket, PostgreSQL"
+  }
+]
