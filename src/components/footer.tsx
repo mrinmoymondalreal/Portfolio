@@ -41,7 +41,7 @@ export function Footer() {
               />
               <HoverLink
                 target="_blank"
-                href="https://drive.google.com/file/d/13VJCjJyXje0b9LB3THHF-LlCi26v-ZhC/view?usp=sharing"
+                href="https://drive.google.com/file/d/1AUpPRLocLJNIcLtQPYDgwcSAr52PQ4fB/view?usp=sharing"
                 text="Resume"
               />
             </div>

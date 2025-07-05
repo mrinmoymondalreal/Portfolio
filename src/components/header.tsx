@@ -20,6 +20,7 @@ export function Header() {
         <ul className="flex justify-center items-center w-fit gap-x-4">
           <HoverLink href="#home" text="Home" />
           <HoverLink href="#aboutme" text="About" />
+          <HoverLink href="#professional-experience" text="Experience" />
           <HoverLink href="#project" text="Projects" />
           <HoverLink
             href="#contact"
