@@ -8,10 +8,12 @@ const stacks = [
   "ReactJS",
   "TailwindCSS",
   "Next.JS",
+  "Node.JS",
   "Express",
+  "React Native",
   "PostgreSQL",
   "MongoDB",
-  "Framer Motion",
+  "Motion (framer)",
 ];
 
 export function TagLineSection() {
@@ -31,7 +33,7 @@ export function TagLineSection() {
         <div className="space-y-4 text-2xl md:text-3xl px-6 md:px-0">
           <div className="text-4xl">my digital tool box</div>
           <div>
-            <ul className="w-full grid grid-cols-2 md:grid-cols-3 gap-2">
+            <ul className="w-full grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-4">
               {stacks.map((e, i) => (
                 <motion.li
                   initial={{ y: "100%", opacity: 0 }}
