@@ -3,7 +3,7 @@
 
 export function MoreProject() {
   return (
-    <div className="h-[30vh] z-10 bg-foreground gap-y-4 flex flex-col justify-center items-center text-3xl md:text-6xl font-bold font-glock w-screen">
+    <div className="h-[30vh] z-10 bg-foreground gap-y-4 px-6 flex flex-col justify-center items-center text-3xl md:text-6xl font-bold font-glock w-screen">
       I Believe in quality over quantity
       {/* <span className="block overflow-hidden px-2 text-2xl bg-[#262626] text-white py-1 font-medium hover:rounded-md transition-all">
         <Link to="/projects">

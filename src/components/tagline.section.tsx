@@ -36,11 +36,21 @@ export function TagLineSection() {
             <ul className="w-full grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-4">
               {stacks.map((e, i) => (
                 <motion.li
+                  className="cursor-default"
                   initial={{ y: "100%", opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   key={i}
                   transition={{
                     delay: 0.05 * i,
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    color: "#ffffff",
+                    transition: {
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20,
+                    },
                   }}
                   viewport={{
                     once: true,
