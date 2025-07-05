@@ -4,7 +4,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { cn } from "../libs/utils";
 
 export default function Slide({
@@ -20,9 +20,6 @@ export default function Slide({
     target: ref,
     offset: ["start end", "0.7 start"],
   });
-  // const rotateX = useTransform(scrollYProgress, [0, 0.2, 1], [0, 0, -100]);
-  // const scale = useTransform(scrollYProgress, [0, 0.2, 1], [1, 1, 0.5]);
-  // const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [1, 1, 0]);
   const rotateX = useTransform(scrollYProgress, [0, 0.6, 1], [0, 0, -50]);
   const tempTranslate = useTransform(scrollYProgress, [0, 0.6, 1], [0, 0, 100]);
   const translateY = useMotionTemplate`${tempTranslate}%`;
@@ -47,27 +44,56 @@ export default function Slide({
   );
 }
 
-function ProjectWrapper() {
+function ProjectWrapper({
+  title,
+  technology,
+  description,
+  image,
+  url,
+}: {
+  title?: string;
+  technology?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}) {
   return (
     <div className="[-webkit-perspective:1900px;] box-border aspect-square md:w-[700px]">
-      <Slide className="sticky top-10 border rounded-xl border-[#676767] bg-[#1e1e1e] aspect-square md:aspect-auto w-[90vw] md:w-full md:h-full p-1.5">
+      <Slide className="sticky top-10 border rounded-xl border-[#676767] bg-[#1e1e1e] aspect-square md:aspect-auto w-[90vw] md:w-full md:h-fit p-1.5">
         <div className="px-7 py-8 project-wrapper-gradient space-y-4 rounded-xl w-full h-full border border-[#1d1d1d] bg-[#262626] transition-all duration-700 relative overflow-hidden group">
           <div className="*:block space-y-2">
             <span className="text-xl font-medium text-white text-glow">
-              Stadia by Google
+              <a
+                className="hover:underline"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrers"
+              >
+                {title}
+                <img
+                  className="ml-2 -mt-2 inline-block"
+                  src="https://img.icons8.com/?size=15&id=0GU4b5gZ4PdA&format=png&color=FFFFFF"
+                />
+              </a>
             </span>
             <span className="text-sm font-medium">
-              <span className="text-white text-glow">Google, 23</span>
-              <span className="text-[#acacac]">
-                — Giving a second life to over a million controllers.
+              <span className="text-[#acacac]">{description}</span>
+              <span className="text-white text-glow block mt-2">
+                — {technology}
               </span>
             </span>
           </div>
-          <div className="absolute w-[90%] h-full translate-y-8 bg-gray-500 left-1/2 -translate-x-1/2 rounded-md group-hover:translate-y-4 transition-transform"></div>
+          <div className="w-[100%] h-fit translate-y-10 overflow-hidden bg-gray-500/10 rounded-md group-hover:translate-y-4 transition-transform flex justify-center">
+            <img src={image} alt="" className="object-contain w-full h-full" />
+          </div>
         </div>
       </Slide>
     </div>
   );
+}
+
+async function fetchProjectData() {
+  return await fetch("projects.json").then((response) => response.json());
 }
 
 export function ProjectSection() {
@@ -76,6 +102,20 @@ export function ProjectSection() {
     target: sectionRef,
     offset: ["start start", "1.33 0"],
   });
+
+  const [data, setData] = useState<
+    {
+      title: string;
+      description: string;
+      technology: string;
+      image: string;
+      url: string;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    fetchProjectData().then((data) => setData(data));
+  }, []);
 
   const rotate = useTransform(scrollYProgress, [0, 1], [36, 720]);
 
@@ -167,9 +207,16 @@ export function ProjectSection() {
           </div>
         </div>
         <div className="flex flex-col items-center space-y-8 [-webkit-perspective:1900px;]">
-          <ProjectWrapper />
-          <ProjectWrapper />
-          <ProjectWrapper />
+          {data.map((project, index) => (
+            <ProjectWrapper
+              key={index}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              technology={project.technology}
+              url={project.url}
+            />
+          ))}
         </div>
       </div>
     </div>

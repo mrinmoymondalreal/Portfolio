@@ -4,6 +4,7 @@ import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { LoadingMask } from "./components/LoadingMask";
 import { MoreProject } from "./components/moreporjects";
+import { ProfessionalExperience } from "./components/professional.section";
 import { ProjectSection } from "./components/project.section";
 import { TagLineSection } from "./components/tagline.section";
 import { motion } from "framer-motion";
@@ -44,6 +45,7 @@ function App() {
       </div>
       <LoadingMask />
       <AboutMeSection />
+      <ProfessionalExperience />
       <ProjectSection />
       <MoreProject />
       <TagLineSection />

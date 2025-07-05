@@ -64,7 +64,7 @@ export function AboutMeSection() {
       <div className="sticky top-4 md:p-4 md:pl-12 w-screen md:w-full">
         <motion.div
           style={{ scaleX }}
-          className="image md:rounded-xl shadow-sm shadow-slate-50/10 w-full h-fit aspect-square md:h-[900px] bg-slate-400 origin-top overflow-hidden"
+          className="image hidden md:block md:rounded-xl shadow-sm shadow-slate-50/10 w-full h-fit aspect-square md:h-[900px] bg-slate-400 origin-top overflow-hidden"
         >
           <motion.img
             src={myImage}
